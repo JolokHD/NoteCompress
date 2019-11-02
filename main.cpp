@@ -57,14 +57,14 @@ int main(){
     std::getline (std::cin,in);
     int bitlen = in.length() * 5;
     int addbits = 6 - (bitlen % 6);
-    std::vector<bool> chararr(bitlen+addbits);
-    for(i=0; i>in.length(); i++)){
+    std::vector<bool> chararr(addbits);
+    for(int i=0; i<(in.length()); i++){
         std::cout << i;
-        auto temp = (encodeLetterChar(in[i]));
-        chararr.insert(chararr.begin()+i, std::begin(temp), std::end(temp));
+        std::array<bool, 5> temp = (encodeLetterChar(in.at(i)));
+        chararr.insert(chararr.begin()+(i*5), temp.begin(), temp.end());
     }
+    std::cout << std::endl << "Data: ";
     for(int i=0; i < chararr.size(); i++){
-        std::cout << chararr.at(i) << ' ';
+        if( chararr.at(i) == false){std::cout << '0';} else {std::cout << '1';}
     }
-    std::cout << bitlen << std::endl << addbits;
 }
