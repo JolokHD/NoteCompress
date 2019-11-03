@@ -68,7 +68,7 @@ int main(){
             exit = false;
             return 0;
         } else
-        if(args.at(0) == help){
+        if(args.at(0) == "help"){
             std::cout << "exit: Exit this programm."                               << std::endl
                       << "encode: Encodes a String"                                << std::endl
                       << "decode: Decodes a encoded String"                        << std::endl
@@ -129,7 +129,7 @@ int main(){
             std::cout << "Decoded String: " << out << std::endl;
         } else {
             std::cout << "Invalid Command"    << std::endl
-                      << "For help type help" << std::endl;
+                      << "For help type <help>" << std::endl;
         }
     }
 }
