@@ -53,6 +53,9 @@ std::array<bool, 5> encodeLetterChar(char inchar){
     return intToBitArray<5>(dis);
 }
 int main(){
+
+
+    //ENCODE
     std::string in;
     std::getline (std::cin,in);
     int bitlen = in.length() * 5;
@@ -65,13 +68,23 @@ int main(){
     }
     std::string returnstring;
     //ADD BASE64
-    std:array<bool,5> arr;
-    std::copy(v.begin(), v.begin()+6, chararr);
-
-    if(addbits = 5){returnstring += '=';}
+    std::array<bool, 6> arr;
+    for(int i=0; i<((bitlen+addbits)/6); i++){
+        std::copy(chararr.begin()+(i*6), chararr.begin()+((i+1)*6), arr.data());
+        returnstring += encodeBase64Char(arr);
+    }
+    if(addbits == 5){returnstring += '=';}
     std::cout << std::endl << "Data: ";
     for(int i=0; i < chararr.size(); i++){
         if( chararr.at(i) == false){std::cout << '0';} else {std::cout << '1';}
     }
+    std::cout << std::endl << "Data: ";
+    for(int i=0; i < arr.size(); i++){
+        if( arr.at(i) == false){std::cout << '0';} else {std::cout << '1';}
+    }
+    std::cout << std::endl << returnstring;
 
+
+    //DECODE
+    
 }
