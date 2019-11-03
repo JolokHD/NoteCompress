@@ -2,7 +2,9 @@
 A Project trying to make text unreadable for Humans and shorter but eas to Read with Tricks.
 
 It uses a custom Base64 Algorithm.
+
 To encode a String make every char to a binary
+
 ' ' to 00000
 'A' to 00001
 'B' to 00010
