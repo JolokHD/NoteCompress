@@ -67,7 +67,6 @@ int main(){
         chararr.insert(chararr.begin()+(i*5), temp.begin(), temp.end());
     }
     std::string returnstring;
-    //ADD BASE64
     std::array<bool, 6> arr;
     for(int i=0; i<((bitlen+addbits)/6); i++){
         std::copy(chararr.begin()+(i*6), chararr.begin()+((i+1)*6), arr.data());
@@ -84,7 +83,32 @@ int main(){
     }
     std::cout << std::endl << returnstring;
 
-
     //DECODE
-    
+    bool removelast5Bits(false);
+    if (returnstring.back() == '='){
+        removelast5Bits = true;
+        returnstring.pop_back();
+    }
+    std::vector<bool> baseVec(returnstring.size()*6);
+    std::array<bool, 6> tempBase;
+    for(int i=0; i<returnstring.size(); i++){
+        tempBase = decodeBase64Char(returnstring.at(i));
+        std::copy(tempBase.begin(), tempBase.end(), baseVec.begin()+(i*6));
+    }
+    std::cout << std::endl << "DataAfterBase64: ";
+    for(int i=0; i < baseVec.size(); i++){
+        if( baseVec.at(i) == false){std::cout << '0';} else {std::cout << '1';}
+    }
+    if(5-baseVec.size()%5 == 5){
+        if(baseVec.size() != 0){
+            if(removelast5Bits){
+                baseVec.resize(baseVec.size()-5);
+            }
+        }
+    }
+    std::cout << std::endl << "Short: ";
+    for(int i=0; i < baseVec.size(); i++){
+        if( baseVec.at(i) == false){std::cout << '0';} else {std::cout << '1';}
+    }
+    std::cout << std::endl << returnstring;
 }
