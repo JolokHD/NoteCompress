@@ -69,9 +69,9 @@ int main(){
             return 0;
         } else
         if(args.at(0) == "help"){
-            std::cout << "exit: Exit this programm."                               << std::endl
-                      << "encode: Encodes a String"                                << std::endl
-                      << "decode: Decodes a encoded String"                        << std::endl
+            std::cout << "<exit>: Exit this programm."                               << std::endl
+                      << "<encode>: Encodes a String"                                << std::endl
+                      << "<decode>: Decodes a encoded String"                        << std::endl
                       << "You can only use Capital Letters for a String to encode" << std::endl;
         } else
         if(args.at(0) == "encode"){
