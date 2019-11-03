@@ -60,9 +60,13 @@ int main(){
         std::string cmdin;
         std::getline (std::cin,cmdin);
         std::vector<std::string> args;
-        std::istringstream iss(cmdin);
-        for(std::string s; iss >> s; ){
-            args.push_back(s);
+        if(cmdin.size() != 0){
+            std::istringstream iss(cmdin);
+            for(std::string s; iss >> s; ){
+                args.push_back(s);
+            }
+        } else {
+            args.push_back("Invalid");
         }
         if(args.at(0) == "exit"){
             exit = false;
@@ -79,6 +83,7 @@ int main(){
             //ENCODE
             std::string in;
             std::getline (std::cin,in);
+            std::transform(in.begin(), in.end(),in.begin(), ::toupper);
             int bitlen = in.length() * 5;
             int addbits = 6 - (bitlen % 6);
             std::vector<bool> chararr(addbits);
@@ -98,6 +103,7 @@ int main(){
         if(args.at(0) == "decode"){
             std::cout << "Enter the String to decode: " << std::endl;
             std::string in;
+            std::transform(in.begin(), in.end(),in.begin(), ::toupper);
             std::getline (std::cin,in);
             //DECODE
             bool removelast5Bits(false);
