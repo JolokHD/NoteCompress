@@ -103,7 +103,6 @@ int main(){
         if(args.at(0) == "decode"){
             std::cout << "Enter the String to decode: " << std::endl;
             std::string in;
-            std::transform(in.begin(), in.end(),in.begin(), ::toupper);
             std::getline (std::cin,in);
             //DECODE
             bool removelast5Bits(false);
