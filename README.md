@@ -19,11 +19,9 @@ With 'WITH' you have something like:
 10111 01001 10100 01000
 
 Then Look at this Base64 Table and translate every 6 Bizs to a Letter.
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
  
  Then encode this binary
