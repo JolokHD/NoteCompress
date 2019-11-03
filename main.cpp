@@ -63,8 +63,14 @@ int main(){
         std::array<bool, 5> temp = (encodeLetterChar(in.at(i)));
         chararr.insert(chararr.begin()+(i*5), temp.begin(), temp.end());
     }
+    std::string returnstring;
+    //ADD BASE64
+
+
+    if(addbits = 5){returnstring += '=';}
     std::cout << std::endl << "Data: ";
     for(int i=0; i < chararr.size(); i++){
         if( chararr.at(i) == false){std::cout << '0';} else {std::cout << '1';}
     }
+
 }
