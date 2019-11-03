@@ -65,7 +65,8 @@ int main(){
     }
     std::string returnstring;
     //ADD BASE64
-
+    std:array<bool,5> arr;
+    std::copy(v.begin(), v.begin()+6, chararr);
 
     if(addbits = 5){returnstring += '=';}
     std::cout << std::endl << "Data: ";
