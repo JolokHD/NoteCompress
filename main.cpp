@@ -54,8 +54,7 @@ std::array<bool, 5> encodeLetterChar(char inchar){
     return intToBitArray<5>(dis);
 }
 int main(){
-    bool exit(true);
-    while(exit){
+    while(true){
         std::cout << '>';
         std::string cmdin;
         std::getline (std::cin,cmdin);
@@ -69,8 +68,7 @@ int main(){
             args.push_back("Invalid");
         }
         if(args.at(0) == "exit"){
-            exit = false;
-            return 0;
+            exit(0);
         } else
         if(args.at(0) == "help"){
             std::cout << "<exit>: Exit this programm."                               << std::endl
@@ -79,7 +77,7 @@ int main(){
                       << "You can only use Capital Letters for a String to encode" << std::endl;
         } else
         if(args.at(0) == "encode"){
-            std::cout << "Enter the String to encode: " << std::endl;
+            std::cout << "Enter a String to encode: " << std::endl;
             //ENCODE
             std::string in;
             std::getline (std::cin,in);
@@ -101,7 +99,7 @@ int main(){
             std::cout << "Encoded String: " << out << std::endl;
         } else
         if(args.at(0) == "decode"){
-            std::cout << "Enter the String to decode: " << std::endl;
+            std::cout << "Enter a String to decode: " << std::endl;
             std::string in;
             std::getline (std::cin,in);
             //DECODE
